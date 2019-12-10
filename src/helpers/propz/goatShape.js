@@ -9,4 +9,4 @@ const goatShape = PropTypes.shape({
   isBusy: PropTypes.bool.isRequired,
 });
 
-export default goatShape;
+export default { goatShape };

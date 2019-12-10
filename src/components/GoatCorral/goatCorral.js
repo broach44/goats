@@ -7,7 +7,7 @@ import goatShape from '../../helpers/propz/goatShape';
 
 class GoatCorral extends React.Component {
   static propTypes = {
-    butts: PropTypes.arrayOf(goatShape),
+    butts: PropTypes.arrayOf(goatShape.goatShape),
   }
 
   render() {
