@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Goat from '../Goat/Goat';
+import Goat from '../Goat/goat';
 
 import goatShape from '../../helpers/propz/goatShape';
 

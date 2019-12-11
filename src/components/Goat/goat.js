@@ -22,8 +22,17 @@ class Goat extends React.Component {
     useGoat(goat.id);
   }
 
+  // isAvailableGoat = (goat) => {
+  //   if (goat.isBusy) {
+  //     return <div className="btn btn-danger" onClick={this.freeGoatEvent} >Free Me</div>;
+  //   } else {
+  //     <div className="btn btn-info" onClick={this.useGoatEvent} >Use Me</div>;
+  //   }
+  // }
+
   render() {
     const { goat } = this.props;
+
     return (
       <div className="card col-3">
         <img src={goat.imgUrl} className="card-img-top" alt="Card Cap" />
@@ -31,8 +40,10 @@ class Goat extends React.Component {
           <h5 className="card-title">{goat.name}</h5>
           <p className="card-text">{goat.age}</p>
           <p className="card-text">{goat.description}</p>
-          <div className="btn btn-danger" onClick={this.freeGoatEvent} >Free Me</div>
-          <div className="btn btn-info" onClick={this.useGoatEvent} >Use Me</div>
+          {
+            (goat.isBusy) ? (<div className="btn btn-danger" onClick={this.freeGoatEvent} >Free Me</div>)
+              : (<div className="btn btn-info" onClick={this.useGoatEvent} >Use Me</div>)
+          }
         </div>
       </div>
     );
