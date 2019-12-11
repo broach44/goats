@@ -7,9 +7,13 @@ class AvailableGoats extends React.Component {
   static propTypes = {
     butts: PropTypes.arrayOf(goatShape.goatShape),
   }
+  // Another option of the below function
+  // getGoatCount = () => {
+  //   const { goats } = this.props;
+  //   return goats.filter((g) => !g.isBusy).length;
+  // }
 
-
-  render() {
+  getGoatCount = () => {
     const myGoats = this.props.butts;
     let availableGoats = 0;
     myGoats.forEach((goat) => {
@@ -17,9 +21,12 @@ class AvailableGoats extends React.Component {
         availableGoats += 1;
       }
     });
+    return availableGoats;
+  };
 
+  render() {
     return (
-      <h2 className="availGoats">{availableGoats} goats available</h2>
+      <h2 className="availGoats">{this.getGoatCount()} goats available</h2>
     );
   }
 }
